@@ -46,6 +46,12 @@ The code issues no data or schema writes to Access, but the connection does not 
 
 它以資料探索為目的，不保證完整重建 Access 結構，也沒有做來源與目的資料的完整比對。輸出資料可用 SQLite 檢視工具開啟，或搬到 Linux 繼續分析。
 
+## Step two: inspect the exported structure / 第二步：檢視匯出後的結構
+
+[SQLite Structure Probe v0.2](tools/sqlite-structure-probe/) generates a text schema report and a CSV of relationship clues from the exported SQLite database. Read-only connection; actual data samples are disabled by default. Uses the Python standard library only.
+
+先匯出資料，再把資料表、欄位與筆數攤開來看。新工具的使用方式與限制請見上方連結。它僅檢視 SQLite 現有結構，無法還原匯出時未保留的 Access 主鍵、索引或關聯。
+
 ## Validation and license
 
 The source has been reviewed and parsed for Python syntax. End-to-end Access extraction has not been tested in this preparation environment, which has no Windows Access driver or sample Access database.

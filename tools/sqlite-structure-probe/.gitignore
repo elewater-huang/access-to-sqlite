@@ -1,0 +1,3 @@
+schema_report_*.txt
+relationship_clues_*.csv
+candidate_keys_*.csv
